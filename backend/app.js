@@ -1,9 +1,13 @@
 const cors = require('cors')
 const express = require('express')
 const errorHandler = require('./middlewares/errorHandlers')
+const connect = require('./config/mongodb')
+const mongoose = require('mongoose');
 const router = require('./routes')
 const app = express()
 const port = 3000
+
+connect()
 
 app.use(cors())
 
@@ -14,6 +18,8 @@ app.use(router)
 
 app.use(errorHandler)
 
-app.listen(port, () => {
-    console.log("App on port " + port)
+mongoose.connection.once('open', () => {
+    app.listen(port, () => {
+        console.log("App on port " + port)
+    })
 })
