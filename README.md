@@ -1,6 +1,7 @@
 # simple-todo-app
 
-Simple-Todo-App API DOCUMENTATIONS
+## Simple-Todo-App API DOCUMENTATIONS
+## DEMO LINK : https://drive.google.com/drive/folders/1A_zBoilpoBK5naG4RqVk17Qr2JQHonjR?usp=share_link
 
 # IMPORTANT NOTE!!
 
@@ -254,3 +255,17 @@ _404 - Not Found_
 ```
 
 ```
+
+### Global Error
+
+#### Response
+
+_500 - Internal Server Error_
+
+- Body
+  ```json
+  {
+    "statusCode": 500,
+    "message": "Internal Server Error"
+  }
+  ```
