@@ -1,4 +1,5 @@
 const cors = require('cors')
+require('dotenv').config()
 const express = require('express')
 const errorHandler = require('./middlewares/errorHandlers')
 const connect = require('./config/mongodb')

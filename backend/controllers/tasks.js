@@ -41,6 +41,10 @@ class Tasks {
     try {
       const { judul, deskripsi, selesai } = req.body;
       const { id } = req.params;
+      let data = await Task.findById(id);
+      if (!data?.judul){
+        throw {name: "Tugas tidak ada", message: "Tugas yang dicari tidak ada"}
+      }
       let updatingData = {};
       if (!judul && !deskripsi && !selesai){
         throw {name: 'Bad Request', message: "Tugas tidak diperbarui karena tidak ada yang di ubah"}
